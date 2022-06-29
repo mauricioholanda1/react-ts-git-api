@@ -13,6 +13,7 @@ import {
 
 import { APIRepo, APIUser } from '../../@types';
 import ProfileData from '../../Components/ProfileData';
+import RepoCard from '../../Components/RepoCard';
 
 interface Data {
   user?: APIUser;
@@ -32,7 +33,7 @@ const Profile: React.FC = () => {
       const [userResponse, reposResponse] = responses;
 
       if (userResponse.status === 404) {
-        setData({ error: 'Busque por um Usuario/Org valido' })
+        setData({ error: 'Busque por um Usuário/Org valido' })
         return;
       }
 
@@ -45,7 +46,6 @@ const Profile: React.FC = () => {
       });
     });
   }, [username]);
-
 
   if (data?.error) {
     return <h1>{data.error}</h1>
@@ -96,7 +96,19 @@ const Profile: React.FC = () => {
           </Tab>
           <Repos>
             <h2>Random repos</h2>
-
+            <div>
+              {data.repos.map(item => (
+                <RepoCard
+                  key={item.name}
+                  username={item.owner.login}
+                  reponame={item.name}
+                  description={item.description}
+                  language={item.language}
+                  stars={item.stargazers_count}
+                  forks={item.forks}
+                />
+              ))}
+            </div>
 
           </Repos>
         </RightSide>
