@@ -24,10 +24,10 @@ export const SearchForm = styled.form `
         outline: 0;
         border-radius: 6px;
         padding: 7px 12px;
-        width: 100%;
+        width: 30%;
 
         &:focus{
-            width: 318px;
+            width: 100%;
         }
 
         transition: width .2s ease-out, color .2s ease-out;
