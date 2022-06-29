@@ -11,6 +11,7 @@ function RoutesApp() {
       <Template>
         <Routes>
           <Route path="/" element={<Profile />} />
+          <Route path="/:username" element={<Profile />} />
         </Routes>
       </Template>
     </BrowserRouter >

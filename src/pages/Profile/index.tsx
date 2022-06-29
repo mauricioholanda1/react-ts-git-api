@@ -12,6 +12,7 @@ import {
 } from './styles';
 
 import { APIRepo, APIUser } from '../../@types';
+import ProfileData from '../../Components/ProfileData';
 
 interface Data {
   user?: APIUser;
@@ -58,7 +59,7 @@ const Profile: React.FC = () => {
     <div className="content">
       <RepoIcon />
 
-      <span className="label">Repositorios</span>
+      <span className="label">Repositórios</span>
       <span className="number">{data.user?.public_repos}</span>
     </div>
   )
@@ -74,7 +75,18 @@ const Profile: React.FC = () => {
       </Tab>
       <Main>
         <LeftSide>
-          profile
+          <ProfileData
+            username={data.user.login}
+            name={data.user.name}
+            avatarUrl={data.user.avatar_url}
+            followers={data.user.followers}
+            following={data.user.following}
+            company={data.user.company}
+            location={data.user.location}
+            email={data.user.email}
+            blog={data.user.blog}
+            bio={data.user.bio}
+          />
         </LeftSide>
 
         <RightSide>
