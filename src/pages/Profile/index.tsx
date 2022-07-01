@@ -63,6 +63,7 @@ const Profile: React.FC = () => {
       <span className="number">{data.user?.public_repos}</span>
     </div>
   )
+
   return (
     <Container>
       <Tab className="desktop">

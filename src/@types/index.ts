@@ -19,7 +19,16 @@ export interface APIRepo {
     };
     stargazers_count: number;
     forks: number;
+    stars?: number;
     html_url: string;
     language?: string;
+    description?: string;
+}
+
+export interface RepoProps {
+    name: string;
+    forks: number;
+    stars?: number;
+    html_url: string;
     description?: string;
 }

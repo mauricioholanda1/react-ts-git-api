@@ -14,7 +14,7 @@ import {
 }
     from './styles';
 
-interface Props {
+interface ProfileDataProps {
     username: string;
     name: string;
     avatarUrl: string;
@@ -27,7 +27,7 @@ interface Props {
     bio?: string;
 }
 
-const ProfileData: React.FC<Props> = ({
+const ProfileData: React.FC<ProfileDataProps> = ({
     username,
     name,
     avatarUrl,
